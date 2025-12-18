@@ -265,18 +265,18 @@ experimental_use_freeform_apply_patch = false
 
 [model_providers]
 
-# --- Example: override OpenAI with explicit base URL or headers ---
-# [model_providers.openai]
-# name = "OpenAI"
-# base_url = "https://api.openai.com/v1"         # default if unset
+# --- Example: override UniVerse with explicit base URL or headers ---
+# [model_providers.universe]
+# name = "UniVerse"
+# base_url = "https://aiservices.apis.universelabs.tech/cli/v1"  # default if unset
 # wire_api = "responses"                         # "responses" | "chat" (default varies)
-# # requires_openai_auth = true                    # built-in OpenAI defaults to true
+# # requires_openai_auth = true                    # built-in UniVerse defaults to true
 # # request_max_retries = 4                        # default 4; max 100
 # # stream_max_retries = 5                         # default 5;  max 100
 # # stream_idle_timeout_ms = 300000                # default 300_000 (5m)
 # # experimental_bearer_token = "sk-example"      # optional dev-only direct bearer token
 # # http_headers = { "X-Example" = "value" }
-# # env_http_headers = { "OpenAI-Organization" = "OPENAI_ORGANIZATION", "OpenAI-Project" = "OPENAI_PROJECT" }
+# # env_http_headers = { "UniVerse-Organization" = "UNIVERSE_ORGANIZATION", "UniVerse-Project" = "UNIVERSE_PROJECT" }
 
 # --- Example: Azure (Chat/Responses depending on endpoint) ---
 # [model_providers.azure]

@@ -81,15 +81,15 @@ model = "gpt-4o"
 model_provider = "openai-chat-completions"
 
 [model_providers.openai-chat-completions]
-# Name of the provider that will be displayed in the Codex UI.
-name = "OpenAI using Chat Completions"
+# Name of the provider that will be displayed in the Viora UI.
+name = "UniVerse using Chat Completions"
 # The path `/chat/completions` will be amended to this URL to make the POST
 # request for the chat completions.
-base_url = "https://api.openai.com/v1"
+base_url = "https://aiservices.apis.universelabs.tech/cli/v1"
 # If `env_key` is set, identifies an environment variable that must be set when
-# using Codex with this provider. The value of the environment variable must be
+# using Viora with this provider. The value of the environment variable must be
 # non-empty and will be used in the `Bearer TOKEN` HTTP header for the POST request.
-env_key = "OPENAI_API_KEY"
+env_key = "UNIVERSE_API_KEY"
 # Valid values for wire_api are "chat" and "responses". Defaults to "chat" if omitted.
 wire_api = "chat"
 # If necessary, extra query params that need to be added to the URL.
@@ -97,7 +97,7 @@ wire_api = "chat"
 query_params = {}
 ```
 
-Note this makes it possible to use Codex CLI with non-OpenAI models, so long as they use a wire API that is compatible with the OpenAI chat completions API. For example, you could define the following provider to use Codex CLI with Ollama running locally:
+Note this makes it possible to use Viora CLI with non-UniVerse models, so long as they use a wire API that is compatible with the chat completions API. For example, you could define the following provider to use Viora CLI with Ollama running locally:
 
 ```toml
 [model_providers.ollama]
@@ -153,10 +153,10 @@ The following optional settings control retry behaviour and streaming idle timeo
 Example:
 
 ```toml
-[model_providers.openai]
-name = "OpenAI"
-base_url = "https://api.openai.com/v1"
-env_key = "OPENAI_API_KEY"
+[model_providers.universe]
+name = "UniVerse"
+base_url = "https://aiservices.apis.universelabs.tech/cli/v1"
+env_key = "UNIVERSE_API_KEY"
 # network tuning overrides (all optional; falls back to built‑in defaults)
 request_max_retries = 4            # retry failed HTTP requests
 stream_max_retries = 10            # retry dropped SSE streams
@@ -165,11 +165,11 @@ stream_idle_timeout_ms = 300000    # 5m idle timeout
 
 ##### request_max_retries
 
-How many times Codex will retry a failed HTTP request to the model provider. Defaults to `4`.
+How many times Viora will retry a failed HTTP request to the model provider. Defaults to `4`.
 
 ##### stream_max_retries
 
-Number of times Codex will attempt to reconnect when a streaming response is interrupted. Defaults to `5`.
+Number of times Viora will attempt to reconnect when a streaming response is interrupted. Defaults to `5`.
 
 ##### stream_idle_timeout_ms
 
@@ -790,22 +790,22 @@ approval_policy = "untrusted"
 # line, though the `--profile` flag can still be used to override this value.
 profile = "o3"
 
-[model_providers.openai-chat-completions]
-name = "OpenAI using Chat Completions"
-base_url = "https://api.openai.com/v1"
-env_key = "OPENAI_API_KEY"
+[model_providers.universe-chat-completions]
+name = "UniVerse using Chat Completions"
+base_url = "https://aiservices.apis.universelabs.tech/cli/v1"
+env_key = "UNIVERSE_API_KEY"
 wire_api = "chat"
 
 [profiles.o3]
 model = "o3"
-model_provider = "openai"
+model_provider = "universe"
 approval_policy = "never"
 model_reasoning_effort = "high"
 model_reasoning_summary = "detailed"
 
 [profiles.gpt3]
 model = "gpt-3.5-turbo"
-model_provider = "openai-chat-completions"
+model_provider = "universe-chat-completions"
 
 [profiles.zdr]
 model = "o3"
