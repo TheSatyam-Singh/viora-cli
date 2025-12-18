@@ -95,7 +95,7 @@ pub fn encode_id_token(claims: &ChatGptIdTokenClaims) -> Result<String> {
     }
     if let Some(plan_type) = &claims.plan_type {
         payload.insert(
-            "https://api.openai.com/auth".to_string(),
+            "https://aiservices.apis.universelabs.tech/auth".to_string(),
             json!({ "chatgpt_plan_type": plan_type }),
         );
     }

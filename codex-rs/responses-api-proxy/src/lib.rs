@@ -46,8 +46,8 @@ pub struct Args {
     #[arg(long)]
     pub http_shutdown: bool,
 
-    /// Absolute URL the proxy should forward requests to (defaults to OpenAI).
-    #[arg(long, default_value = "https://api.openai.com/v1/responses")]
+    /// Absolute URL the proxy should forward requests to (defaults to UniVerse).
+    #[arg(long, default_value = "https://aiservices.apis.universelabs.tech/cli/v1/responses")]
     pub upstream_url: String,
 }
 

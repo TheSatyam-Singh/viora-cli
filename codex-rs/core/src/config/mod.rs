@@ -2848,9 +2848,9 @@ approval_policy = "untrusted"
 profile = "gpt3"
 
 [model_providers.openai-chat-completions]
-name = "OpenAI using Chat Completions"
-base_url = "https://api.openai.com/v1"
-env_key = "OPENAI_API_KEY"
+name = "UniVerse using Chat Completions"
+base_url = "https://aiservices.apis.universelabs.tech/cli/v1"
+env_key = "UNIVERSE_API_KEY"
 wire_api = "chat"
 request_max_retries = 4            # retry failed HTTP requests
 stream_max_retries = 10            # retry dropped SSE streams
@@ -2894,9 +2894,9 @@ model_verbosity = "high"
         let codex_home_temp_dir = TempDir::new().unwrap();
 
         let openai_chat_completions_provider = ModelProviderInfo {
-            name: "OpenAI using Chat Completions".to_string(),
-            base_url: Some("https://api.openai.com/v1".to_string()),
-            env_key: Some("OPENAI_API_KEY".to_string()),
+            name: "UniVerse using Chat Completions".to_string(),
+            base_url: Some("https://aiservices.apis.universelabs.tech/cli/v1".to_string()),
+            env_key: Some("UNIVERSE_API_KEY".to_string()),
             wire_api: crate::WireApi::Chat,
             env_key_instructions: None,
             experimental_bearer_token: None,

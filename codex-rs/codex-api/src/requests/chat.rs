@@ -341,8 +341,8 @@ mod tests {
 
     fn provider() -> Provider {
         Provider {
-            name: "openai".to_string(),
-            base_url: "https://api.openai.com/v1".to_string(),
+            name: "universe".to_string(),
+            base_url: "https://aiservices.apis.universelabs.tech/cli/v1".to_string(),
             query_params: None,
             wire: WireApi::Chat,
             headers: HeaderMap::new(),

@@ -840,7 +840,7 @@ mod tests {
         let payload = serde_json::json!({
             "email": "user@example.com",
             "email_verified": true,
-            "https://api.openai.com/auth": auth_payload,
+            "https://aiservices.apis.universelabs.tech/auth": auth_payload,
         });
         let b64 = |b: &[u8]| base64::engine::general_purpose::URL_SAFE_NO_PAD.encode(b);
         let header_b64 = b64(&serde_json::to_vec(&header)?);

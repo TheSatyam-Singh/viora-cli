@@ -409,7 +409,7 @@ mod tests {
         };
         let payload = json!({
             "email": format!("{prefix}@example.com"),
-            "https://api.openai.com/auth": {
+            "https://aiservices.apis.universelabs.tech/auth": {
                 "chatgpt_account_id": format!("{prefix}-account"),
             },
         });

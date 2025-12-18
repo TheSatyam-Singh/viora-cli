@@ -41,7 +41,7 @@ fn start_mock_issuer(chatgpt_account_id: &str) -> (SocketAddr, thread::JoinHandl
                 };
                 let payload = serde_json::json!({
                     "email": "user@example.com",
-                    "https://api.openai.com/auth": {
+                    "https://aiservices.apis.universelabs.tech/auth": {
                         "chatgpt_plan_type": "pro",
                         "chatgpt_account_id": chatgpt_account_id,
                     }

@@ -53,7 +53,7 @@ pub fn extract_chatgpt_account_id(token: &str) -> Option<String> {
         .decode(payload_b64)
         .ok()?;
     let v: serde_json::Value = serde_json::from_slice(&payload_bytes).ok()?;
-    v.get("https://api.openai.com/auth")
+    v.get("https://aiservices.apis.universelabs.tech/auth")
         .and_then(|auth| auth.get("chatgpt_account_id"))
         .and_then(|id| id.as_str())
         .map(str::to_string)
