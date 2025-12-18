@@ -1,77 +1,77 @@
-<p align="center"><code>npm i -g @openai/codex</code><br />or <code>brew install --cask codex</code></p>
+<p align="center"><code>npm i -g @universelabs/viora</code><br />or <code>brew install --cask viora</code></p>
 
-<p align="center"><strong>Codex CLI</strong> is a coding agent from OpenAI that runs locally on your computer.
+<p align="center"><strong>UniVerse Viora CLI</strong> is a coding agent from UniVerse Labs that runs locally on your computer.
 </br>
-</br>If you want Codex in your code editor (VS Code, Cursor, Windsurf), <a href="https://developers.openai.com/codex/ide">install in your IDE</a>
-</br>If you are looking for the <em>cloud-based agent</em> from OpenAI, <strong>Codex Web</strong>, go to <a href="https://chatgpt.com/codex">chatgpt.com/codex</a></p>
+</br>If you want Viora in your code editor (VS Code, Cursor, Windsurf), <a href="https://developers.universelabs.tech/viora/ide">install in your IDE</a>
+</br>If you are looking for the <em>cloud-based agent</em> from UniVerse, <strong>Viora Web</strong>, go to <a href="https://viora.universelabs.tech">viora.universelabs.tech</a></p>
 
 <p align="center">
-  <img src="./.github/codex-cli-splash.png" alt="Codex CLI splash" width="80%" />
+  <img src="./.github/codex-cli-splash.png" alt="Viora CLI splash" width="80%" />
   </p>
 
 ---
 
 ## Quickstart
 
-### Installing and running Codex CLI
+### Installing and running UniVerse Viora CLI
 
 Install globally with your preferred package manager. If you use npm:
 
 ```shell
-npm install -g @openai/codex
+npm install -g @universelabs/viora
 ```
 
 Alternatively, if you use Homebrew:
 
 ```shell
-brew install --cask codex
+brew install --cask viora
 ```
 
-Then simply run `codex` to get started:
+Then simply run `viora` to get started:
 
 ```shell
-codex
+viora
 ```
 
-If you're running into upgrade issues with Homebrew, see the [FAQ entry on brew upgrade codex](./docs/faq.md#brew-upgrade-codex-isnt-upgrading-me).
+If you're running into upgrade issues with Homebrew, see the [FAQ entry on brew upgrade viora](./docs/faq.md#brew-upgrade-viora-isnt-upgrading-me).
 
 <details>
-<summary>You can also go to the <a href="https://github.com/openai/codex/releases/latest">latest GitHub Release</a> and download the appropriate binary for your platform.</summary>
+<summary>You can also go to the <a href="https://github.com/TheSatyam-Singh/viora-cli/releases/latest">latest GitHub Release</a> and download the appropriate binary for your platform.</summary>
 
 Each GitHub Release contains many executables, but in practice, you likely want one of these:
 
 - macOS
-  - Apple Silicon/arm64: `codex-aarch64-apple-darwin.tar.gz`
-  - x86_64 (older Mac hardware): `codex-x86_64-apple-darwin.tar.gz`
+  - Apple Silicon/arm64: `viora-aarch64-apple-darwin.tar.gz`
+  - x86_64 (older Mac hardware): `viora-x86_64-apple-darwin.tar.gz`
 - Linux
-  - x86_64: `codex-x86_64-unknown-linux-musl.tar.gz`
-  - arm64: `codex-aarch64-unknown-linux-musl.tar.gz`
+  - x86_64: `viora-x86_64-unknown-linux-musl.tar.gz`
+  - arm64: `viora-aarch64-unknown-linux-musl.tar.gz`
 
-Each archive contains a single entry with the platform baked into the name (e.g., `codex-x86_64-unknown-linux-musl`), so you likely want to rename it to `codex` after extracting it.
+Each archive contains a single entry with the platform baked into the name (e.g., `viora-x86_64-unknown-linux-musl`), so you likely want to rename it to `viora` after extracting it.
 
 </details>
 
-### Using Codex with your ChatGPT plan
+### Using Viora with your UniVerse account
 
 <p align="center">
-  <img src="./.github/codex-cli-login.png" alt="Codex CLI login" width="80%" />
+  <img src="./.github/codex-cli-login.png" alt="Viora CLI login" width="80%" />
   </p>
 
-Run `codex` and select **Sign in with ChatGPT**. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Team, Edu, or Enterprise plan. [Learn more about what's included in your ChatGPT plan](https://help.openai.com/en/articles/11369540-codex-in-chatgpt).
+Run `viora` and select **Sign in with UniVerse**. We recommend signing into your UniVerse account to use Viora as part of your Plus, Pro, Team, Edu, or Enterprise plan. [Learn more about what's included in your UniVerse plan](https://help.universelabs.tech/en/articles/viora-plans).
 
-You can also use Codex with an API key, but this requires [additional setup](./docs/authentication.md#usage-based-billing-alternative-use-an-openai-api-key). If you previously used an API key for usage-based billing, see the [migration steps](./docs/authentication.md#migrating-from-usage-based-billing-api-key). If you're having trouble with login, please comment on [this issue](https://github.com/openai/codex/issues/1243).
+You can also use Viora with an API key, but this requires [additional setup](./docs/authentication.md#usage-based-billing-alternative-use-a-universe-api-key). If you previously used an API key for usage-based billing, see the [migration steps](./docs/authentication.md#migrating-from-usage-based-billing-api-key). If you're having trouble with login, please comment on [this issue](https://github.com/TheSatyam-Singh/viora-cli/issues/1).
 
 ### Model Context Protocol (MCP)
 
-Codex can access MCP servers. To configure them, refer to the [config docs](./docs/config.md#mcp_servers).
+Viora can access MCP servers. To configure them, refer to the [config docs](./docs/config.md#mcp_servers).
 
 ### Configuration
 
-Codex CLI supports a rich set of configuration options, with preferences stored in `~/.codex/config.toml`. For full configuration options, see [Configuration](./docs/config.md).
+UniVerse Viora CLI supports a rich set of configuration options, with preferences stored in `~/.viora/config.toml`. For full configuration options, see [Configuration](./docs/config.md).
 
 ### Execpolicy
 
-See the [Execpolicy quickstart](./docs/execpolicy.md) to set up rules that govern what commands Codex can execute.
+See the [Execpolicy quickstart](./docs/execpolicy.md) to set up rules that govern what commands Viora can execute.
 
 ### Docs & FAQ
 

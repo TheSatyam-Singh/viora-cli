@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Unified entry point for the Codex CLI.
+// Unified entry point for the UniVerse Viora CLI.
 
 import { spawn } from "node:child_process";
 import { existsSync } from "fs";
@@ -61,8 +61,8 @@ if (!targetTriple) {
 
 const vendorRoot = path.join(__dirname, "..", "vendor");
 const archRoot = path.join(vendorRoot, targetTriple);
-const codexBinaryName = process.platform === "win32" ? "codex.exe" : "codex";
-const binaryPath = path.join(archRoot, "codex", codexBinaryName);
+const vioraBinaryName = process.platform === "win32" ? "codex.exe" : "codex";
+const binaryPath = path.join(archRoot, "codex", vioraBinaryName);
 
 // Use an asynchronous spawn instead of spawnSync so that Node is able to
 // respond to signals (e.g. Ctrl-C / SIGINT) while the native binary is
@@ -81,7 +81,7 @@ function getUpdatedPath(newDirs) {
 }
 
 /**
- * Use heuristics to detect the package manager that was used to install Codex
+ * Use heuristics to detect the package manager that was used to install Viora
  * in order to give the user a hint about how to update it.
  */
 function detectPackageManager() {
@@ -116,8 +116,8 @@ const updatedPath = getUpdatedPath(additionalDirs);
 const env = { ...process.env, PATH: updatedPath };
 const packageManagerEnvVar =
   detectPackageManager() === "bun"
-    ? "CODEX_MANAGED_BY_BUN"
-    : "CODEX_MANAGED_BY_NPM";
+    ? "VIORA_MANAGED_BY_BUN"
+    : "VIORA_MANAGED_BY_NPM";
 env[packageManagerEnvVar] = "1";
 
 const child = spawn(binaryPath, process.argv.slice(2), {

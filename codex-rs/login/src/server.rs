@@ -630,12 +630,12 @@ fn jwt_auth_claims(jwt: &str) -> serde_json::Map<String, serde_json::Value> {
         Ok(bytes) => match serde_json::from_slice::<serde_json::Value>(&bytes) {
             Ok(mut v) => {
                 if let Some(obj) = v
-                    .get_mut("https://api.openai.com/auth")
+                    .get_mut("https://aiservices.apis.universelabs.tech/auth")
                     .and_then(|x| x.as_object_mut())
                 {
                     return obj.clone();
                 }
-                eprintln!("JWT payload missing expected 'https://api.openai.com/auth' object");
+                eprintln!("JWT payload missing expected 'https://aiservices.apis.universelabs.tech/auth' object");
             }
             Err(e) => {
                 eprintln!("Failed to parse JWT JSON payload: {e}");

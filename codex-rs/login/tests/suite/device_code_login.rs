@@ -125,7 +125,7 @@ async fn device_code_login_integration_succeeds() -> anyhow::Result<()> {
     mock_poll_token_two_step(&mock_server, Arc::new(AtomicUsize::new(0)), 404).await;
 
     let jwt = make_jwt(json!({
-        "https://api.openai.com/auth": {
+        "https://aiservices.apis.universelabs.tech/auth": {
             "chatgpt_account_id": "acct_321"
         }
     }));
@@ -163,7 +163,7 @@ async fn device_code_login_rejects_workspace_mismatch() -> anyhow::Result<()> {
     mock_poll_token_two_step(&mock_server, Arc::new(AtomicUsize::new(0)), 404).await;
 
     let jwt = make_jwt(json!({
-        "https://api.openai.com/auth": {
+        "https://aiservices.apis.universelabs.tech/auth": {
             "chatgpt_account_id": "acct_321",
             "organization_id": "org-actual"
         }

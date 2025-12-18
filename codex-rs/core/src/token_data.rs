@@ -65,7 +65,7 @@ pub(crate) enum KnownPlan {
 struct IdClaims {
     #[serde(default)]
     email: Option<String>,
-    #[serde(rename = "https://api.openai.com/auth", default)]
+    #[serde(rename = "https://aiservices.apis.universelabs.tech/auth", default)]
     auth: Option<AuthClaims>,
 }
 
@@ -147,7 +147,7 @@ mod tests {
         };
         let payload = serde_json::json!({
             "email": "user@example.com",
-            "https://api.openai.com/auth": {
+            "https://aiservices.apis.universelabs.tech/auth": {
                 "chatgpt_plan_type": "pro"
             }
         });
